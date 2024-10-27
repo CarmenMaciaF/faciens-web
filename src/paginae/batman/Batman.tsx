@@ -1,7 +1,23 @@
 import { NavLink } from 'react-router-dom'
 import './estilus.css'
+import { useState } from 'react';
+
+
+interface Coordinatas {
+  x: number;
+  y: number;
+}
+
+const photos = ["justice", "arkham", "superman", "varios", "villana", "villano", "grupo", "robin", "anne", "joker", "resplandor", "cat", "gafas", "league", "fondoVerde"]; 
+
 
 export const Batman = () => {
+
+  const [mousepositione, setMousePositione] = useState<Coordinatas>({x:0, y:0});
+
+  const [numerator, setNumerator] = useState<number>(0);
+
+
   return (
     <div className="batman">
 
@@ -34,7 +50,15 @@ export const Batman = () => {
 
     <header className='titulus'>
         <h1>Batman</h1>
-        <div id='titulus-batman' className='titulus-img'></div>
+        <div 
+          onMouseMove={ (e) => setMousePositione({x:e.pageX * -0.1, y: e.pageY * -0.1})}
+          onMouseLeave={() => setMousePositione({ x:0, y:0})}
+          style={{
+            backgroundPositionX: `${mousepositione.x}px`,
+            backgroundPositionY: `${mousepositione.y}px`
+          }}
+          id='titulus-batman' 
+          className='titulus-img'></div>
         <p>Él puede tomar la decisión que nadie más puede, la decisión correcta</p>
     </header>
 
@@ -77,11 +101,22 @@ export const Batman = () => {
 
     
     <section id="videre">
+      
       <div className='videre-arca'>
 
-        <svg className='retro' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
-        <img id='foto' src='./imagenes/batman/justice.jpg' alt=''/>
-        <svg className='ante' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
+        <svg 
+          onClick={() => {
+            if(numerator === 0) return;
+            setNumerator(numerator -1);
+          }} 
+          className='retro' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg>
+        <img id='foto' src= {`./imagenes/batman/${photos [numerator]}.jpg`} alt=''/>
+        <svg  
+          onClick={() => {
+            if (numerator === photos.length -1) return;
+            setNumerator(numerator +1)
+          }} 
+            className='ante' xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg>
      
       </div>
     </section>
