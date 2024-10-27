@@ -4,6 +4,20 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* **** navegador **** */
+
+.extra-nav {
+    background-color: #f7f7f7;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 0 1rem 0;
+    position: fixed;
+    top: 0px;
+    width: 11rem;
+    opacity: 0.7;
+    z-index: 1;
+    border-radius: 0 0 1rem 0;
+
+}
+
 .svg-home > svg {
     fill: slateblue;
     width: 3rem;
@@ -14,6 +28,52 @@
     fill: var(--color-lux);
     background-color: slateblue;
 }
+
+.navbar >ul a {
+    padding: 0.5rem;
+    transition: all 0.15s linear;
+}
+
+.navbar >ul a:hover {
+    color: var(--color-lux);
+    background-color:slateblue;
+}
+
+.navbar > ul> li {
+    line-height: 2rem;
+}
+
+.navbar >ul {
+    padding: 0.8rem 1rem;
+}
+
+
+
+
+@media (min-width: 640px) {
+
+    .extra-nav {
+        width: 100%;
+        border-radius: 0;
+        opacity: 1;
+    }
+
+    .navbar {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .navbar >ul {
+        padding: 0;
+    }
+
+    .navbar >ul > li {
+        display: inline;
+    }
+
+}
+
+/* **** titulus **** */
 
 .titulus-img {
     background-size: 100% 100%;
@@ -52,5 +112,114 @@
 @media (min-width: 768px) {
     .titulus >p {
         display: block;
+    }
+}
+
+.item {
+    padding: 1.5rem 0;
+    height: 500;
+}
+
+
+
+
+/* **** Vehiculis **** */
+
+#vehiculis {
+    max-width: 510px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.vehiculis-titulus {
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    height:5.5rem;
+    color: white;
+}
+
+.unus {
+    background-color: rgba(220, 220, 220, 0.2);
+}
+.duo {
+    background-color: rgba(220, 220, 220, 0.8);
+}
+.tribus {
+    background-color: rgba(220, 220, 220, 0.8);
+}
+
+.notitia >h2 {
+    font-size:1.7rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+    padding-bottom: 1rem;
+}
+
+.notitia > small {
+    padding: 1rem;
+    font-weight: bold;
+}
+
+
+
+
+
+/* **** Videre **** */
+
+#videre {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.videre-arca {
+    max-width:1280px;
+    margin: 0 auto;
+    min-height:40vh;
+}
+
+#foto {
+    height: 250px;
+}
+
+.ante, .retro {
+    fill: gray;
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.ante:hover, .retro:hover {
+    fill: var(--color-lux);
+}
+
+@media (min-width: 768px) {
+    #foto {
+        height: 400px;
+    }
+
+    .videre-arca {
+        min-height:60vh;
+    }
+
+    .ante, .retro {
+        fill: gray;
+        height: 5rem;
+        width: 5rem;
+    }
+}
+
+  
+
+@media (min-width: 1024px) {
+    #foto {
+        height: 600px;
+    }
+
+    .videre-arca {
+        min-height: 80vh;
+    }
+
+    .ante, .retro {
+        fill: gray;
+        height: 6.3rem;
+        width: 6.3rem;
     }
 }
