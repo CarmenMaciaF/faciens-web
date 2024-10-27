@@ -29,6 +29,18 @@
     background-color: slateblue;
 }
 
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nanbar > ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 2rem;
+}
+
 .navbar >ul a {
     padding: 0.5rem;
     transition: all 0.15s linear;
@@ -61,17 +73,23 @@
     .navbar {
         max-width: 1280px;
         margin: 0 auto;
+
+        flex-direction: row;
+        justify-content: space-between;
     }
 
-    .navbar >ul {
+    .navbar > ul {
         padding: 0;
+        flex-direction: row;
     }
 
-    .navbar >ul > li {
-        display: inline;
+    .navbar >ul a {
+        padding: 1rem;
     }
 
 }
+
+
 
 /* **** titulus **** */
 
@@ -115,10 +133,7 @@
     }
 }
 
-.item {
-    padding: 1.5rem 0;
-    height: 500;
-}
+
 
 
 
@@ -129,6 +144,8 @@
     max-width: 510px;
     margin: 0 auto;
     padding: 4rem 0;
+    display:flex;
+    flex-direction:column;
 }
 
 .vehiculis-titulus {
@@ -136,16 +153,47 @@
     background-color: rgba(0, 0, 0, 0.7);
     height:5.5rem;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    padding: 1.5rem 0;
+    height: 500;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.item >img {
+    width: 450px;
+}
+
+.vehiculis-arca {
+    order: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .unus {
     background-color: rgba(220, 220, 220, 0.2);
+    order: 2;
 }
 .duo {
     background-color: rgba(220, 220, 220, 0.8);
 }
 .tribus {
     background-color: rgba(220, 220, 220, 0.8);
+    order: 3;
+}
+
+.notitia {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .notitia >h2 {
@@ -153,12 +201,59 @@
     font-weight: 600;
     color: rgba(0, 0, 0, 0.7);
     padding-bottom: 1rem;
+    
 }
 
 .notitia > small {
     padding: 1rem;
     font-weight: bold;
 }
+
+@media (min-width: 640px) {
+    #vehiculis {
+        max-width: 576px;
+        
+    }
+}
+
+@media (min-width: 768px) {
+    #vehiculis {
+        max-width: 900px;
+    }
+
+    .item {
+        flex-direction: row;
+        height: 320px;
+    }
+
+    .notitia {
+        width: 40%;
+    }
+
+    .unus >img {
+        order: -1;
+    }
+}
+
+@media (min-width: 1024px) {
+    #vehiculis {
+        max-width: 1280px;
+    }
+
+    .item {
+        flex-direction: column;
+        height: 560px;
+    }
+
+    .vehiculis-arca {
+        flex-direction: row;
+    }
+
+    .notitia {
+        width: 90%;
+    }
+}
+
 
 
 
@@ -174,6 +269,9 @@
     max-width:1280px;
     margin: 0 auto;
     min-height:40vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #foto {
