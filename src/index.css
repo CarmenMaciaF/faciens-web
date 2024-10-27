@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-tenebris: rgb(21, 25, 52);
+    --color-caelum: rgb(24, 182, 246);
+    --color-lux: #fff;
+}
+
+@font-face {
+    font-family: batman;
+    src: url("../fonts/batmfo__.ttf");
+}
+
+body {
+    background-color: var(--color-tenebris);
+    font-family: "Lexend", sans-serif;
+}
+
+

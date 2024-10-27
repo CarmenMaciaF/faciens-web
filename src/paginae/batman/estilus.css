@@ -1,0 +1,56 @@
+
+.batman {
+    background-color: var(--color-lux);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.svg-home > svg {
+    fill: slateblue;
+    width: 3rem;
+    height: 3rem;
+}
+
+.svg-home >svg:hover {
+    fill: var(--color-lux);
+    background-color: slateblue;
+}
+
+.titulus-img {
+    background-size: 100% 100%;
+    background-position: center center;
+    background-image: url("../imagenes/batman/batman.jpg");
+    min-height: 100vh;
+}
+
+.titulus-img:hover {
+    background-size: 115% 115%;
+}
+
+.titulus > h1 {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+    pointer-events: none;
+    font-family: batman;
+}
+
+.titulus >p {
+    color: white;
+    position: absolute;
+    top: 47%;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    pointer-events: none;
+    font-family: batman;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .titulus >p {
+        display: block;
+    }
+}

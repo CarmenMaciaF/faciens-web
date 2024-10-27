@@ -1,0 +1,20 @@
+.titulo {
+    font-size: 3rem;
+    color: var(--color-caelum);
+}
+
+.tonitruum {
+    width: 12rem;
+    border-width: 0.1rem;
+    border-color: coral;
+    margin: 1.5rem 0;
+}
+
+.tonitruum:hover {
+    border-width: 0.3rem;
+}
+
+.botones > a {
+    color: white;
+    margin-right: 1rem;
+}
